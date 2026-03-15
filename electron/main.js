@@ -36,6 +36,7 @@ function createWindow() {
   }
 
   mainWindow.once('ready-to-show', () => {
+    mainWindow.setFullScreen(true);
     mainWindow.show();
     mainWindow.focus();
   });
@@ -47,6 +48,7 @@ function createWindow() {
 
 function showMorningFlow() {
   if (mainWindow && !mainWindow.isDestroyed()) {
+    mainWindow.setFullScreen(true);
     mainWindow.show();
     mainWindow.focus();
   } else {
