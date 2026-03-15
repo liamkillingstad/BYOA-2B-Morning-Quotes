@@ -1,6 +1,6 @@
-# Morning Reflections
+# Daily Reflections
 
-A warm, literary morning notes app that greets you when your Mac wakes from sleep or when you log in. Before you dive into your day, it invites you to reflect on gratitude, excitement, and intention—with an optional algebra puzzle and a quote to ponder.
+A warm, literary reflection app that greets you when your Mac wakes from sleep or when you log in. Before you dive into your day, it invites you to reflect on gratitude, excitement, and intention—with an optional algebra puzzle and a quote to ponder.
 
 ## Features
 
@@ -34,7 +34,7 @@ npm run electron
 
 ## Run at Login (macOS)
 
-To have Morning Reflections open when you log in:
+To have Daily Reflections open when you log in:
 
 1. Open **System Settings → General → Login Items**
 2. Click **+** and add the app (after building, it will be in the `dist` folder or wherever you install it)

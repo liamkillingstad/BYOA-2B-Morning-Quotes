@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { generateAlgebraProblem } from './utils/algebra';
 import { fetchQuote } from './utils/quotes';
 import './App.css';
 
 const STEPS = { QUESTIONS: 0, ALGEBRA: 1, QUOTE: 2 };
+
+// Calming ambient music (CC) - replace with your own file in public/ if preferred
+const CALMING_MUSIC_URL = 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3';
 
 function normalizeForCompare(str) {
   return str
@@ -28,6 +31,7 @@ function App() {
   const [quoteInput, setQuoteInput] = useState('');
   const [quoteError, setQuoteError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const audioRef = useRef(null);
 
   const canProceedFromQuestions =
     thankful.trim() && excited.trim() && important.trim();
@@ -46,6 +50,17 @@ function App() {
         .finally(() => setLoading(false));
     }
   }, [step, quote]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.volume = 0.4;
+      audio.play().catch(() => {});
+    }
+    return () => {
+      if (audio) audio.pause();
+    };
+  }, []);
 
   const handleQuestionsSubmit = () => {
     if (!canProceedFromQuestions) return;
@@ -94,8 +109,9 @@ function App() {
 
   return (
     <div className="app">
+      <audio ref={audioRef} src={CALMING_MUSIC_URL} loop preload="auto" />
       <header className="header">
-        <h1 className="title">Morning Reflections</h1>
+        <h1 className="title">Daily Reflections</h1>
         <p className="subtitle">A moment of intention before the day begins</p>
       </header>
 

@@ -6,19 +6,19 @@ let mainWindow = null;
 let hasShownThisSession = false;
 
 function createWindow() {
-  const { width, height } = screen.getPrimaryDisplay().workAreaSize;
+  const { width, height } = screen.getPrimaryDisplay().bounds;
   
   mainWindow = new BrowserWindow({
-    width: Math.min(700, width - 80),
-    height: Math.min(900, height - 80),
-    minWidth: 500,
-    minHeight: 600,
-    title: 'Morning Reflections',
+    width,
+    height,
+    fullscreen: true,
+    fullScreenable: true,
+    title: 'Daily Reflections',
     backgroundColor: '#5c2d38',
     show: false,
     alwaysOnTop: true,
     skipTaskbar: false,
-    resizable: true,
+    resizable: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
