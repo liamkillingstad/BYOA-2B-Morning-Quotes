@@ -1,0 +1,25 @@
+:root {
+  --burgundy-dark: #4a2430;
+  --burgundy: #5c2d38;
+  --burgundy-mid: #6b3a47;
+  --burgundy-soft: #7a4a55;
+  --burgundy-muted: #8b5a68;
+  --cream: #f0e8e4;
+  --cream-soft: #e8ddd8;
+  --ink: #2d2228;
+  --text-muted: #a88d94;
+  --accent-warm: #c4a09a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  background: var(--burgundy);
+  color: var(--cream);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}

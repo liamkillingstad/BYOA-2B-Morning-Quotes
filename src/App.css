@@ -1,0 +1,275 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2.5rem;
+  background: linear-gradient(180deg, #5c2d38 0%, #4a2430 50%, #3d1e28 100%);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-family: 'Libre Baskerville', 'Georgia', serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--cream);
+  letter-spacing: 0.08em;
+  margin: 0 0 0.35rem 0;
+}
+
+.subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step {
+  width: 100%;
+  max-width: 420px;
+}
+
+.prompt {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Questions */
+.questions-step .question {
+  margin-bottom: 1.25rem;
+}
+
+.questions-step label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--cream);
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.questions-step textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  border: 1px solid var(--burgundy-soft);
+  background: rgba(74, 36, 48, 0.5);
+  color: var(--cream);
+  border-radius: 4px;
+  resize: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.questions-step textarea:focus {
+  outline: none;
+  border-color: var(--accent-warm);
+  box-shadow: 0 0 0 2px rgba(196, 160, 154, 0.25);
+}
+
+.questions-step textarea::placeholder {
+  color: var(--burgundy-muted);
+}
+
+.questions-step .btn-primary {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Algebra */
+.algebra-step .algebra-problem {
+  margin-bottom: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(74, 36, 48, 0.5);
+  border: 1px solid var(--burgundy-soft);
+  border-radius: 6px;
+}
+
+.problem-text {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.35rem;
+  color: var(--cream);
+}
+
+.algebra-answer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.algebra-answer label {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.algebra-answer input {
+  flex: 1;
+  padding: 0.6rem 0.85rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  border: 1px solid var(--burgundy-soft);
+  background: rgba(74, 36, 48, 0.5);
+  color: var(--cream);
+  border-radius: 4px;
+}
+
+.algebra-answer input:focus {
+  outline: none;
+  border-color: var(--accent-warm);
+}
+
+.algebra-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+.algebra-feedback {
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  font-size: 1.05rem;
+}
+
+.algebra-feedback.correct {
+  background: rgba(196, 160, 154, 0.2);
+  color: var(--cream);
+  border: 1px solid var(--burgundy-soft);
+}
+
+.algebra-feedback.incorrect {
+  background: rgba(122, 74, 85, 0.4);
+  color: var(--cream-soft);
+  border: 1px solid var(--burgundy-muted);
+  font-style: italic;
+}
+
+.algebra-feedback strong {
+  font-weight: 600;
+}
+
+/* Quote */
+.quote-step .quote-block {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--cream);
+  margin: 0 0 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  background: rgba(74, 36, 48, 0.5);
+  border-left: 3px solid var(--accent-warm);
+  line-height: 1.6;
+}
+
+.quote-loading {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.quote-input-wrap {
+  margin-bottom: 1rem;
+}
+
+.quote-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  border: 1px solid var(--burgundy-soft);
+  background: rgba(74, 36, 48, 0.5);
+  color: var(--cream);
+  border-radius: 4px;
+}
+
+.quote-input:focus {
+  outline: none;
+  border-color: var(--accent-warm);
+}
+
+.quote-input.error {
+  border-color: var(--burgundy-muted);
+  box-shadow: 0 0 0 2px rgba(139, 90, 104, 0.4);
+}
+
+.quote-error {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--accent-warm);
+  margin-top: 0.4rem;
+}
+
+/* Buttons */
+.btn {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent-warm);
+  color: var(--burgundy-dark);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #d4b4ac;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--burgundy-soft);
+}
+
+.btn-secondary:hover {
+  background: rgba(196, 160, 154, 0.15);
+}
+
+.footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.ornament {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  letter-spacing: 0.3em;
+}
+
+.btn-override {
+  display: block;
+  margin: 0.75rem auto 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.btn-override:hover {
+  color: var(--cream);
+}
